@@ -1,11 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import './plugins/element.js'
+//引入element-ui配置
+import './plugins/element'
+// 引入axios配置
+import './plugins/axios'
 
-Vue.use(ElementUI)
+// 引入初始化css样式
+import '../src/assets/css/_gloabl.css'
+
+//引入字体图标
+import './assets/fonts/iconfont.css'
+
 
 Vue.config.productionTip = false
 
