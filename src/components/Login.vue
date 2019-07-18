@@ -66,7 +66,9 @@ export default {
         if (!verification) return;
         // 成功后发送http请求
         let { data: res } = await this.$http.post("login", this.loginForm);
-        if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
+        if (res.meta.status !== 200) {
+          return this.$message.error(res.meta.msg);
+        }
         this.$message.success(res.meta.msg);
         // 将token写入sessionStroage
         window.sessionStorage.setItem("token", res.data.token);

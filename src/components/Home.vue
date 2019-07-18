@@ -71,7 +71,9 @@ export default {
     async getMenusList() {
       let { data: res } = await this.$http.get("menus");
       // console.log(res);
-      if (res.meta.status != "200") return this.$message.error(res.meta.msg);
+      if (res.meta.status !== 200) {
+        return this.$message.error(res.meta.msg);
+      }
       this.menuLists = res.data;
     },
     logout: function() {
@@ -102,7 +104,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 0;
+    padding: 0 40px 0 10px;
     > div {
       display: flex;
       align-items: center;
